@@ -4,9 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>test</title>
+  <style>
+    .box{
+      color: rgb(100, 30, 40);
+      font-size: 17px;
+      transform: translate(10px, 20px);
+    }
+  </style>
 </head>
 <body>
-  
+  <div class="box">hello world</div>
 </body>
 </html>
-<script src="./js/request/multiRequest.js"></script>
+<!-- <script src="./js/request/multiRequest.js"></script> -->
+<script src="./js/css/getComputedStyle.js"></script>
+<script>
+  let styleValues = getAllStyle(document.querySelector('.box'))
+  console.log(styleValues)
+  console.log(styleValues['color'])
+  console.log(styleValues['transform'])
+</script>
