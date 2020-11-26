@@ -3,14 +3,9 @@
 
 */
 function getStyleByAttr(el, name){
-  return window.getComputedStyle ? window.getComputedStyle(el, null)[name] : el.currentStyle[name]
-}
-function getAllStyle(el){
-  let styleObj = document.defaultView.getComputedStyle(el, null)
-  let obj = {}
-  for(let styleName of styleObj){
-    // obj[styleName] = styleObj.getPropertyValue(styleName)
-    obj[styleName] = getStyleByAttr(el, styleName)
+  if (name) {
+    return window.getComputedStyle ? window.getComputedStyle(el, null)[name] : el.currentStyle[name]
+  } else {
+    return window.getComputedStyle ? window.getComputedStyle(el, null) : el.currentStyle
   }
-  return obj
 }
